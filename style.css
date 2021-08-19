@@ -1,0 +1,122 @@
+body {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin-top: 100px;
+  background: #020f24;
+}
+
+.clock {
+  margin: auto;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("images/clock.png");
+  background-size: cover;
+  border: 4px solid #15648b;
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+    inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+    0 15px 15px rgba(255, 255, 255, 0.05),
+    0 -15px 15px rgba(255, 255, 255, 0.05);
+  border-radius: 90%;
+  margin-bottom: 100px;
+}
+
+.clock::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 40%;
+  z-index: 500;
+}
+
+.clock .hour,
+.clock .minute,
+.clock .second {
+  position: absolute;
+}
+
+.clock .hour,
+.hr {
+  width: 160px;
+  height: 160px;
+}
+
+.clock .minute,
+.min {
+  width: 210px;
+  height: 210px;
+}
+
+.clock .second,
+.sec {
+  width: 180px;
+  height: 180px;
+}
+
+.hr,
+.min,
+.sec {
+  display: flex;
+  justify-content: center;
+}
+
+.hr::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 80px;
+  background: red;
+  z-index: 10;
+  border-radius: 6px 6px 0 0;
+}
+
+.min::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 100px;
+  background: rgb(33, 35, 41);
+  z-index: 11;
+  border-radius: 6px 6px 0 0;
+}
+
+.sec::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 120px;
+  background: rgb(233, 233, 233);
+  z-index: 12;
+  border-radius: 6px 6px 0 0;
+}
+
+.pushable {
+  position: relative;
+  left: 45%;
+  background: hsl(340deg 100% 32%);
+  border-radius: 12px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  align-items: center;
+}
+
+.front {
+  display: block;
+  padding: 12px 42px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  background: hsl(345deg 100% 47%);
+  color: white;
+  transform: translateY(-6px);
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
+}
